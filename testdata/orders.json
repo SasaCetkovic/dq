@@ -1,0 +1,9 @@
+[
+  {"order_id": 1, "customer_id": 1, "product_id": 1, "total": 89.97},
+  {"order_id": 2, "customer_id": 2, "product_id": 2, "total": 149.50},
+  {"order_id": 3, "customer_id": 1, "product_id": 3, "total": 64.95},
+  {"order_id": 4, "customer_id": 3, "product_id": 5, "total": 89.00},
+  {"order_id": 5, "customer_id": 4, "product_id": 8, "total": 599.00},
+  {"order_id": 6, "customer_id": 5, "product_id": 7, "total": 199.99},
+  {"order_id": 7, "customer_id": 2, "product_id": 9, "total": 49.90}
+]

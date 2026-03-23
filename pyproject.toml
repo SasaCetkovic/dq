@@ -1,0 +1,13 @@
+[project]
+name = "dq"
+version = "0.1.0"
+description = "Query any data file (CSV, JSON, TSV) with SQL from the command line"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas>=3.0.1",
+    "requests>=2.32.5",
+]
+
+[project.scripts]
+dq = "dq.cli:main"
