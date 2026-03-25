@@ -54,7 +54,7 @@ uv run main.py "SELECT * FROM your_file.csv"
 
 | Command | Description |
 |---------|-------------|
-| `\load file.csv [as alias]` | Load a file into the session |
-| `\tables` | List loaded tables |
-| `\describe <table>` | Show table schema |
-| `\quit` | Exit |
+| `/load file.csv [as alias]` | Load a file into the session |
+| `/tables` | List loaded tables |
+| `/describe <table>` | Show table schema |
+| `/quit` | Exit |

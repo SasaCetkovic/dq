@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "dq-cli"
-version = "0.1.0"
+version = "0.1.1"
 description = "Query any data file (CSV, JSON, TSV, Parquet) with SQL from the command line"
 readme = "README.md"
 requires-python = ">=3.12"

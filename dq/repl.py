@@ -17,7 +17,7 @@ def run_repl() -> None:
     """Start the interactive dq REPL."""
     engine = Engine()
     print("dq — interactive SQL shell")
-    print("Commands: \\load <file> [as <alias>], \\tables, \\describe <table>, \\quit")
+    print("Commands: /load <file> [as <alias>], /tables, /describe <table>, /quit")
     print("Type SQL to query. File references (e.g. data.csv) are auto-loaded.\n")
 
     while True:
@@ -30,14 +30,14 @@ def run_repl() -> None:
         if not line:
             continue
 
-        if line.lower() in ("\\quit", "\\q", "exit", "quit"):
+        if line.lower() in ("/quit", "/q", "exit", "quit"):
             break
 
-        if line.lower().startswith("\\load"):
+        if line.lower().startswith("/load"):
             _handle_load(engine, line)
             continue
 
-        if line.lower() in ("\\tables", "\\t"):
+        if line.lower() in ("/tables", "/t"):
             tables = engine.list_tables()
             if tables:
                 for t in tables:
@@ -46,7 +46,7 @@ def run_repl() -> None:
                 print("  (no tables loaded)")
             continue
 
-        if line.lower().startswith("\\describe") or line.lower().startswith("\\d "):
+        if line.lower().startswith("/describe") or line.lower().startswith("/d "):
             _handle_describe(engine, line)
             continue
 
@@ -61,10 +61,10 @@ def run_repl() -> None:
 
 
 def _handle_load(engine: Engine, line: str) -> None:
-    """Parse and execute: \\load <file> [as <alias>]"""
+    """Parse and execute: /load <file> [as <alias>]"""
     parts = line.split()
     if len(parts) < 2:
-        print("Usage: \\load <file> [as <alias>]")
+        print("Usage: /load <file> [as <alias>]")
         return
     path = parts[1]
     alias = None
@@ -78,10 +78,10 @@ def _handle_load(engine: Engine, line: str) -> None:
 
 
 def _handle_describe(engine: Engine, line: str) -> None:
-    """Parse and execute: \\describe <file_or_table>"""
+    """Parse and execute: /describe <file_or_table>"""
     parts = line.split()
     if len(parts) < 2:
-        print("Usage: \\describe <file_or_table>")
+        print("Usage: /describe <file_or_table>")
         return
     target = parts[1]
 
