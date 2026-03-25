@@ -23,7 +23,7 @@ dq --format json "SELECT * FROM data.csv"
 
 # Interactive REPL
 dq
-```
+```     
 
 ## Installation
 
