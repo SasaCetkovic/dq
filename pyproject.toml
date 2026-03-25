@@ -1,13 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
-name = "dq"
+name = "dq-cli"
 version = "0.1.0"
 description = "Query any data file (CSV, JSON, TSV) with SQL from the command line"
 readme = "README.md"
 requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [
+    { name = "Saša Ćetković", email = "sasa.cetkovic@outlook.com" },
+]
+keywords = ["sql", "cli", "csv", "json", "tsv", "data", "query", "duckdb"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Database",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
 dependencies = [
     "pandas>=3.0.1",
     "requests>=2.32.5",
 ]
 
+[project.urls]
+Homepage = "https://github.com/SasaCetkovic/dq"
+Repository = "https://github.com/SasaCetkovic/dq"
+Issues = "https://github.com/SasaCetkovic/dq/issues"
+
 [project.scripts]
 dq = "dq.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["dq"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/dq",
+    "/README.md",
+    "/LICENSE",
+]
